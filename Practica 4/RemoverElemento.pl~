@@ -1,0 +1,17 @@
+%Caso Base, cuando la lista al que se elimina el elemento buscado
+%Esta vacia, detiene la recursividad
+removeElemento(Q,[],[]).
+
+%Caso base donde se compara el elemento que se quiere eliminar
+% Con la cabeza de la lista, si son iguales, se envia el cuerpo de la
+% lista para avanzar y no agregarlo a la lista
+removeElemento(Q,[Q|Y],R):-
+    removeElemento(Q,Y,R).
+
+%este Caso ocurre cuando el elemento buscado no esta en la cabeza
+%Por tanto, no se ¨eliminara¨, si no se agregara a la nueva lista
+removeElemento(X,[Q|Y],[Q|S]):-
+     removeElemento(X,Y,S).
+
+
+

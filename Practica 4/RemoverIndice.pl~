@@ -1,0 +1,13 @@
+%Caso Base, Detiene recursividad cuando listas vacias
+removerIndice(_,[],[]).
+
+
+removerIndice(Q,[X|Y],R):-
+    Aux is Q,
+    Aux==1,
+    removerIndice(0,Y,R).
+
+
+removerIndice(Q,[X|Y],[X|T]):-
+             Aux is Q-1,
+              removerIndice(Aux,Y,T).

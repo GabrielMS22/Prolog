@@ -1,0 +1,7 @@
+
+
+
+combinarver1([X|Y],[W|F],R):-
+       R=XW,
+       combinarver(Y,F,R).
+

@@ -1,0 +1,29 @@
+
+                        %Hace la suma de una sucesion que comienza
+                        %en un inicio definido y aumenta en 1 en 1
+sumatoria(Inicio,Fin,R):-
+          J is Inicio,
+          Fin=:=J,      % fin tiene que ser igual a J
+          R=Fin.        %si no lo es, buscara el otro caso
+                        %el cual es recursivo a este, pero cambia
+                        %los valores de inicio
+sumatoria(Inicio,Fin,R):-
+          P is Inicio,
+          sumatoria(P+1,Fin,Sum),
+          R is Sum+Inicio.
+
+
+sumatoriacubos(Numero,R):-
+            Numero=:=1,
+            R=Numero.
+
+
+sumatoriacubos(Numero,R):-
+            Cant is Numero,
+            Mul is Cant*Cant,
+            Reduc is Cant-1,
+            sumatoriacubos(Reduc,R2),
+            Final is  Mul+R2,
+            R=Final.
+
+

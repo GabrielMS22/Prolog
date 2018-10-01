@@ -1,0 +1,11 @@
+%Caso para detener recursividad
+isSubListinList([],[]).
+%Detiene recursividad cuando segunda lista esta vacia
+isSubListinList([LO|X],[]).
+
+isSubListinList([LO|X],[LO|W]):-
+         isSubListinList(X,W).
+
+
+isSubListinList([LO|X],SL):-
+         isSubListinList(X,SL).

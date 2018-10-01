@@ -1,0 +1,5 @@
+
+separarUltimoElemento([A],[],A).
+
+separarUltimoElemento([A|B],[A|X],Ult):-
+    separarUltimoElemento(B,X,Ult).

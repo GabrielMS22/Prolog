@@ -1,0 +1,27 @@
+
+%Estos 2 casos base son cuando las 2 listas
+%solo tienen 1 elemento, se verifica quien es mas grande
+%y se agrega a la lista respuesta, el caso mas basico
+concatenar2ListasOrd([L1],[L2],[R,X]):-
+    L1>L2,
+    R is L2,
+    X is L1.
+concatenar2ListasOrd([L1],[L2],[R,X]):-
+    L1<L2,
+    R is L1,
+    X is L2.
+concatenar2ListasOrd([],L2,L2).
+
+concatenar2ListasOrd(L1,[],L1).
+
+
+concatenar2ListasOrd([L1|X],[L2|Y],[R|T]):-
+    L1>L2,
+    R is L2,
+    concatenar2ListasOrd([L1|X],Y,T).
+
+concatenar2ListasOrd([L1|X],[L2|Y],[R|T]):-
+    L2>L1,
+    R is L1,
+    concatenar2ListasOrd(X,[L2|Y],T).
+

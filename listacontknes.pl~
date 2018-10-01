@@ -1,0 +1,11 @@
+
+contador(_,[],0).
+
+contador(X,[X|Y],R):-
+    contador(X,Y,R2),
+    R is  1+R2.
+
+
+contador(X,[_|W],R):-
+    contador(X,W,R2),
+    R=R2.

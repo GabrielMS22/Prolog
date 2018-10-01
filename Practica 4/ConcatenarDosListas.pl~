@@ -1,0 +1,9 @@
+
+%Caso base para detener
+
+concatenarDosListas([],C,C).
+
+concatenarDosListas([A|B],C,[A|Y]):-
+    concatenarDosListas(B,C,Y).
+
+

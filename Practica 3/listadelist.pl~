@@ -1,0 +1,16 @@
+
+
+
+
+
+concatenar([], [], _).
+
+concatenar([Cabeza|Cola],[Cabeza2|Cola2],[[R|X]]):-
+       R is Cabeza,
+       X is Cabeza2,
+       concatenar(Cola, Cola2,Aux2).
+
+
+
+
+

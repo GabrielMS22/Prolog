@@ -1,0 +1,11 @@
+
+%Caso base, si solo hay un elemento en la lista
+%Ese mismo es el mayor.
+ultimoMayor([X],[X]).
+ultimoMayor([L1,X|Y],Ult):-
+    L1>X,
+    ultimoMayor([X,L1|Y],Ult).
+
+
+ultimoMayor([L1,X|Y],[L1|Ult]):-
+   ultimoMayor([X|Y],Ult).

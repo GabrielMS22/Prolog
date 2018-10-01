@@ -1,0 +1,6 @@
+
+//Variables anonimas
+miembro(_,[],_):- write('.....').
+miembro(X,[X|_],1).
+miembro(X,[_|Y],R):- miembro(X,Y,Raux),
+                     R is Raux+1.

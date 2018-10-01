@@ -1,0 +1,18 @@
+
+
+
+
+% si la lista tiene un solo elemento, entonces ese elemento es el mayor
+% de toda la lista.
+mayor([X],X).
+
+mayor([X|Y],R):-
+    X>1,
+    R=X,
+    mayor(Y,R2),
+    R=R2.
+mayor([X|Y],R):-
+    mayor(Y,R).
+
+
+
